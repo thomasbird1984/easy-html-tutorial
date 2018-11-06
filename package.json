@@ -1,0 +1,28 @@
+{
+  "name": "easy-html-tutorial",
+  "version": "1.0.0",
+  "description": "A basic html, css and javascript tutorial",
+  "main": "index.html",
+  "scripts": {
+    "dev-server": "php -S localhost:8020"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasbird1984/easy-html-tutorial.git"
+  },
+  "keywords": [
+    "basic",
+    "html",
+    "css",
+    "javascript",
+    "html",
+    "programming",
+    "tutorial"
+  ],
+  "author": "Thomas Bird <Godoploid@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thomasbird1984/easy-html-tutorial/issues"
+  },
+  "homepage": "https://github.com/thomasbird1984/easy-html-tutorial#readme"
+}
