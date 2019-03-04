@@ -81,3 +81,14 @@ ul li {
   font-family: sans-serif;
   border-bottom: 1px solid #ddd;
 }
+.code-highlight--block {
+  display: block;
+  overflow: auto;
+  max-height: 200px;
+  padding: 15px 30px;
+  margin-bottom: 20px;
+  border-left: 3px solid #ddd;
+  border-top: 1px solid #eee;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}

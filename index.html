@@ -63,6 +63,31 @@
             </ul>
 
             <p><b>Selectors</b> are how we can identify the html elements that we want to style. There are 3 main ways to identify the tags we are trying to target. First is the most basic, the actual tag name. Second and most important we can identify them by class names or id's. Third we can identify tags by combinations of tag names, classes, ids and attributes.</p>
+            <p>Here is some example html markup and some example selectors:</p>
+
+            <span class="code-highlight code-highlight--block">
+                &lt;div class="wrap"&gt;&lt;/div&gt;<br/>
+                &lt;ul&gt;&lt;/ul&gt;<br/>
+                &lt;p id="test"&gt;&lt;/p&gt;
+            </span>
+
+            <span class="code-highlight code-highlight--block">
+                .wrap {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;width: 600px;<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;margin: 0 auto;<br/>
+                }<br/><br/>
+
+                ul {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;list-style: circle;<br/>
+                }<br/><br/>
+
+                #test {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;font-family: helvetica, arial, verdana;<br/>
+                }
+            </span>
+
+            <p><b>Rules</b> have 2 major parts, the name of the rule and the actual rule. For instance, <span class="code-highlight">background-color: red;</span>. Here you see a `:` this is what divides the name of rule from the actual rule. At the end you have a `;` which denotes that this is the end of the rule. If it is the last rule in the set of rules then it doesn't technically require you to put an ending `;` but I do it because it's safer and so that when you go to add more rules you don't forget to add the `;`.</p>
+            <p>So now you know about selectors and rules lets put it altogether.</p>
         </section>
         <section class="tutorial-content-chapter" id="javascript">
             <h3>Javascript</h3>
