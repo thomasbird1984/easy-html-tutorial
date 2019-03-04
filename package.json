@@ -1,11 +1,10 @@
 {
   "name": "easy-html-tutorial",
   "version": "1.0.0",
-  "description": "A basic programming tutorial",
+  "description": "A basic html, css and javascript tutorial",
   "main": "index.html",
   "scripts": {
-    "dev-server": "php -S localhost:8010",
-    "test": "na"
+    "dev-server": "php -S localhost:8020"
   },
   "repository": {
     "type": "git",
@@ -14,11 +13,11 @@
   "keywords": [
     "basic",
     "html",
-    "tutorial",
-    "web",
-    "development",
     "css",
-    "javascript"
+    "javascript",
+    "html",
+    "programming",
+    "tutorial"
   ],
   "author": "Thomas Bird <Godoploid@gmail.com>",
   "license": "MIT",
