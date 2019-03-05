@@ -39,9 +39,13 @@ h5 {
   font-weight: 400;
 }
 
+h2 {
+  font-size: 54px;
+}
+
 ul {
-  margin: 0 0 0 30px;
   padding: 0;
+  margin: 0 0 30px 40px;
 }
 ul li {
   list-style: circle;
@@ -52,9 +56,26 @@ ul li {
   display: flex;
   flex-direction: row;
 }
-.tutorial-table-of-contents, .tutorial-content {
+.tutorial-table-of-contents ul {
+  margin: 0;
+}
+.tutorial-table-of-contents ul li {
+  font-size: 14px;
+}
+.tutorial-table-of-contents ul li a {
+  color: #aaa;
+  display: block;
+  cursor: pointer;
+  padding: 5px 0 5px 10px;
+  border-right: 1px solid transparent;
+}
+.tutorial-table-of-contents ul li a.active, .tutorial-table-of-contents ul li a:hover {
+  color: #000;
+  background: #eee;
+  border-right: 1px solid #aaa;
+}
+.tutorial-content {
   box-sizing: border-box;
-  padding: 15px;
 }
 .tutorial-table-of-contents {
   flex: 1 0 0;
@@ -64,13 +85,16 @@ ul li {
 .tutorial-content {
   flex: 4 0 0;
   height: 100%;
-  overflow-x: hidden;
   overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
 }
 .tutorial-content-chapter {
+  padding: 15px 30px;
   border-bottom: 1px solid #ccc;
-  padding-bottom: 40px;
-  margin-bottom: 40px;
+}
+.tutorial-content-chapter:nth-child(even) {
+  background: #fbfbfb;
 }
 
 .code-highlight {
@@ -91,4 +115,20 @@ ul li {
   border-top: 1px solid #eee;
   border-right: 1px solid #eee;
   border-bottom: 1px solid #eee;
+}
+
+.toTop {
+  right: 20px;
+  bottom: 20px;
+  color: #666;
+  display: block;
+  font-weight: 500;
+  background: #fff;
+  position: absolute;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+.toTop:hover {
+  background: #fbfbfb;
 }

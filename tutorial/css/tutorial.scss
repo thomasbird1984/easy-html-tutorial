@@ -39,9 +39,13 @@ h5 {
     font-weight: 400;
 }
 
+h2 {
+    font-size: 54px;
+}
+
 ul  {
-    margin: 0 0 0 30px;
     padding: 0;
+    margin: 0 0 30px 40px;
 
     li {
         list-style: circle;
@@ -55,10 +59,33 @@ ul  {
         flex-direction: row;
     }
 
-    &-table-of-contents,
+    &-table-of-contents {
+        ul {
+            margin: 0;
+
+            li {
+                font-size: 14px;
+
+                a {
+                    color: #aaa;
+                    display: block;
+                    cursor: pointer;
+                    padding: 5px 0 5px 10px;
+                    border-right: 1px solid transparent;
+
+                    &.active,
+                    &:hover {
+                        color: #000;
+                        background: #eee;
+                        border-right: 1px solid #aaa;
+                    }
+                }
+            }
+        }
+    }
+
     &-content {
         box-sizing: border-box;
-        padding: 15px;
     }
 
     &-table-of-contents {
@@ -70,13 +97,17 @@ ul  {
     &-content {
         flex: 4 0 0;
         height: 100%;
-        overflow-x: hidden;
         overflow-y: auto;
+        overflow-x: hidden;
+        position: relative;
 
         &-chapter {
+            padding: 15px 30px;
             border-bottom: 1px solid #ccc;
-            padding-bottom: 40px;
-            margin-bottom: 40px;
+
+            &:nth-child(even) {
+                background: #fbfbfb;
+            }
         }
     }
 }
@@ -99,5 +130,22 @@ ul  {
         border-top: 1px solid #eee;
         border-right: 1px solid #eee;
         border-bottom: 1px solid #eee;
+    }
+}
+
+.toTop {
+    right: 20px;
+    bottom: 20px;
+    color: #666;
+    display: block;
+    font-weight: 500;
+    background: #fff;
+    position: absolute;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+
+    &:hover {
+        background: #fbfbfb;
     }
 }
