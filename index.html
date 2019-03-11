@@ -17,6 +17,7 @@
             <li><a href="#javascript">Javascript</a></li>
             <li><a href="#getting-started">Getting started</a></li>
             <li><a href="#diving-deeper">Diving deeper</a></li>
+            <li><a href="#build-a-simple-example">Build a simple example</a></li>
             <li><a href="#contact-us">Contact us</a></li>
         </ul>
     </div>
@@ -127,6 +128,247 @@
             <h2>Diving deeper</h2>
 
             More advanced tutorials
+        </section>
+        <section class="tutorial-content-chapter" id="build-a-simple-example">
+            <h2>Simple Homepage</h2>
+
+            <p>For this example we are going to build a simple one page example of websites homepage. This will have a simple header area, navigation, content area with a sidebar on the left and a main content area on the right and finally a simple footer with some copyright information</p>
+
+            <p>Let's start with the most basic and stripped down html markup:</p>
+
+            <span class="code-highlight code-highlight--block">
+                &lt;!doctype html&gt;<br/>
+                &lt;html&gt;<br/>
+                    &nbsp;&nbsp;&lt;head&gt;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Simple Example&lt;/title&gt;<br/>
+                    &nbsp;&nbsp;&lt;/head&gt;<br/>
+                    &nbsp;&nbsp;&lt;body&gt;<br/>
+                    &nbsp;&nbsp;&lt;/body&gt;<br/>
+                &lt;/html&gt;
+            </span>
+
+            <p>For this example we will reference an outside stylesheet with this line of code:</p>
+
+            <span class="code-highlight code-highlight--block">
+                &lt;link href="style.css" rel="stylesheet" /&gt;
+            </span>
+
+            <p>So your code should look like this now:</p>
+
+            <span class="code-highlight code-highlight--block">
+                &lt;!doctype html&gt;<br/>
+                &lt;html&gt;<br/>
+                    &nbsp;&nbsp;&lt;head&gt;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Simple Example&lt;/title&gt;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;link href="style.css" rel="stylesheet" /&gt;<br/>
+                    &nbsp;&nbsp;&lt;/head&gt;<br/>
+                    &nbsp;&nbsp;&lt;body&gt;<br/>
+                    &nbsp;&nbsp;&lt;/body&gt;<br/>
+                &lt;/html&gt;
+            </span>
+
+            <p>For the rest of this example we will only be writing code in the <span class="code-highlight">style.css</span> and in between the <span class="code-highlight">&lt;body&gt;&lt/body&gt; sections. So from here on out whenever we are adding code I will let you know whether it belongs in the styles or body.</span></p>
+
+            <p>So let's first start with a simple wrapper, this markup will go between the body tags. We will add all of the necessary containers to the markup for all of our major areas like our header, navigation, content sidebar and main and our footer</p>
+
+            <span class="code-highlight code-highlight--block">
+                &lt;div class="wrapper"&gt;<br/>
+                    &nbsp;&nbsp;&lt;div class="header"&gt;<br/>
+                    &nbsp;&nbsp;&lt;/div&gt;<br/>
+                    &nbsp;&nbsp;&lt;div class="navigation"&gt;<br/>
+                    &nbsp;&nbsp;&lt;/div&gt;<br/>
+                    &nbsp;&nbsp;&lt;div class="content-wrapper"&gt;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="content-sidebar"&gt;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="content-main"&gt;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>
+                    &nbsp;&nbsp;&lt;/div&gt;<br/>
+                    &nbsp;&nbsp;&lt;div class="footer"&gt;<br/>
+                    &nbsp;&nbsp;&lt;/div&gt;<br/>
+                &lt;/div&gt;<br/>
+            </span>
+
+            <p>From here let's add some very basic content, to essentially identify more easily the visual areas.</p>
+
+            <span class="code-highlight code-highlight--block">
+                &lt;div class="wrapper"&gt;<br/>
+                    &nbsp;&nbsp;&lt;div class="header"&gt;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;This is the header area&lt;/h2&gt;
+                    &nbsp;&nbsp;&lt;/div&gt;<br/>
+
+                    &nbsp;&nbsp;&lt;div class="navigation"&gt;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=""&gt;Home&lt;/a&gt;&lt;/li&gt;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=""&gt;About&lt;/a&gt;&lt;/li&gt;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=""&gt;Blog&lt;/a&gt;&lt;/li&gt;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=""&gt;Contact&lt;/a&gt;&lt;/li&gt;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br/>
+                    &nbsp;&nbsp;&lt;/div&gt;<br/>
+
+                    &nbsp;&nbsp;&lt;div class="content-wrapper"&gt;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="content-sidebar"&gt;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Sidebar&lt;/h3&gt;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="content-main"&gt;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Main Content Area&lt;/h3&gt;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>
+                    &nbsp;&nbsp;&lt;/div&gt;<br/>
+
+                    &nbsp;&nbsp;&lt;div class="footer"&gt;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Footer area&lt;/h3&gt;<br/>
+                    &nbsp;&nbsp;&lt;/div&gt;<br/>
+                &lt;/div&gt;<br/>
+            </span>
+
+            <p>Next let's add some selectors for the various pieces of our markup to the styles:</p>
+
+            <span class="code-highlight code-highlight--block">
+            body {<br/>
+                &nbsp;&nbsp;font-weight: 100;<br/>
+                &nbsp;&nbsp;line-height: 150%;<br/>
+                &nbsp;&nbsp;font-family: helvetica, arial, verdana;<br/>
+            }<br/><br/>
+
+            .wrapper {}<br/><br/>
+
+            .header {}<br/><br/>
+
+            .navigation {}<br/><br/>
+
+            .content-wrapper {}<br/><br/>
+
+            .content-sidebar {}<br/><br/>
+
+            .content-main {}<br/><br/>
+
+            .footer {}
+            </span>
+
+            <p>With all of this in place, you can open the file in your browser and it should look something like this:</p>
+
+            <div class="image__holder">
+                <a target="_blank" href="examples/homepage/img/step-1.png">
+                    <img class="image__holder--img" src="examples/homepage/img/step-1.png" alt="Step 1" />
+                </a>
+            </div>
+
+            <p>Now that we can see all of the divisions / sections of the content lets add a very basic border to the styles by adding this code:</p>
+
+            <span class="code-highlight code-highlight--block">
+                .header,<br/>
+                .navigation,<br/>
+                .content-sidebar,<br/>
+                .content-main,<br/>
+                .footer {<br/>
+                    &nbsp;&nbsp;border: 1px solid #aaa;<br/>
+                }
+            </span>
+
+            <p>With this code, your page should look like this:</p>
+
+            <div class="image__holder">
+                <a target="_blank" href="examples/homepage/img/step-2.png">
+                    <img class="image__holder--img" src="examples/homepage/img/step-2.png" alt="Step 2" />
+                </a>
+            </div>
+
+            <p>Let's give the wrapper a width and center it on the page:</p>
+
+            <span class="code-highlight code-highlight--block">
+                .wrapper {<br/>
+                    &nbsp;&nbsp;width: 1170px;<br/>
+                    &nbsp;&nbsp;margin: 0 auto;<br/>
+                }
+            </span>
+
+            <p>Now let's get into a little bit more of the core of this application, let's start by making the content sections sit side by side. ie the sidebar and main content area. This can be done a number of ways, we'll program it with the latest method but I will still show you multiple ways of doing it.</p>
+            <p>To begin we are going to use <a target="_blank" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">flex layout</a> So we'll add this rule to the <span class="code-highlight">.content-wrapper { display: flex; }</span>, then we'll add <span class="code-highlight">.content-sidebar { flex: 1; }</span> and <span class="code-highlight">.content-main { flex: 3; }</span>. For more info on flex check out this <a href="#flex-explanation">section</a></p>
+
+            <div class="image__holder">
+                <a target="_blank" href="examples/homepage/img/step-3.png">
+                    <img class="image__holder--img" src="examples/homepage/img/step-3.png" alt="Step 3" />
+                </a>
+            </div>
+
+            <p>Now let's style the navigation to make it look a little more like an actual navigation that you might see on other sites: </p>
+
+            <span class="code-highlight code-highlight--block">
+            .navigation {<br/>
+                &nbsp;&nbsp;background: #eee;<br/>
+            }<br/><br/>
+
+            .navigation ul {<br/>
+                &nbsp;&nbsp;margin: 0;<br/>
+                &nbsp;&nbsp;padding: 0;<br/>
+                &nbsp;&nbsp;display: flex;<br/>
+                &nbsp;&nbsp;list-style: none;<br/>
+            }<br/><br/>
+
+            .navigation a {<br/>
+                &nbsp;&nbsp;color: #999;<br/>
+                &nbsp;&nbsp;display: block;<br/>
+                &nbsp;&nbsp;padding: 10px 15px;<br/>
+                &nbsp;&nbsp;text-decoration: none;<br/>
+            }<br/><br/>
+
+            .navigation a:hover {<br/>
+                &nbsp;&nbsp;color: #000;<br/>
+                &nbsp;&nbsp;background: #ccc;<br/>
+            }
+            </span>
+
+            <p>Your page should now look like this if you refresh the page:</p>
+
+            <div class="image__holder">
+                <a target="_blank" href="examples/homepage/img/step-4.png">
+                    <img class="image__holder--img" src="examples/homepage/img/step-4.png" alt="Step 4" />
+                </a>
+            </div>
+
+            <p>This is a very basic layout, to give it just a little bit more of a realistic look, by adding some fake content:</p>
+
+            <div class="image__holder">
+                <a target="_blank" href="examples/homepage/img/step-5.png">
+                    <img class="image__holder--img" src="examples/homepage/img/step-5.png" alt="Step 5" />
+                </a>
+            </div>
+
+            <p>That'll wrap up the this tutorial, this is very basic but it gives you the basic template to start your website.</p>
+
+        </section>
+        <section class="tutorial-content-chapter" id="flex-explanation">
+            <h2>CSS Flex a little deeper</h2>
+            <p>Flex allows you to basically say, if I were to divide the width of the container by 4, then we are able to say we want one div to have 1/4 and another to have 3/4 of the containers space. So if we wanted to make both parts equal width we would set the flex property to <span class="code-highlight">.content-sidebar { flex: 2; }</span> and <span class="code-highlight">.content-main { flex: 2; }</span></span>. This could be simplified down to <span class="code-highlight">.content-sidebar { flex: 1; }</span> and <span class="code-highlight">.content-main { flex: 1; }</span></p>
+
+            <p>Really flex can be divided by any number and then each section or column can be given a fraction of that to determine what size it will take up. So for instance, lets say the container is divided into 100 equal parts and we would have have to elements inside. Let's also say we want one element to be 1/4 and the other element to be 3/4 of the containers width. So that would be 25 and 75, which can be simplified to 1/4 and 3/4. So it would be flex: 1 and flex: 3.</p>
+
+            <p>Below is an example of a container divided into 4 equal parts with each contained block taking up 1/4 of the containers space, hence flex = 1. </p>
+
+            <div class="example-container">
+                <div class="example-container-column" style="flex: 1">
+                    <span class="code-highlight">flex: 1;</span>
+                </div>
+                <div class="example-container-column" style="flex: 1">
+                    <span class="code-highlight">flex: 1;</span>
+                </div>
+                <div class="example-container-column" style="flex: 1">
+                    <span class="code-highlight">flex: 1;</span>
+                </div>
+                <div class="example-container-column" style="flex: 1">
+                    <span class="code-highlight">flex: 1;</span>
+                </div>
+            </div>
+
+            <p>Below is an example of a container divided into 4 equal parts with each contained block taking up 1/4 of the containers space and another taking up 3/4. Hence flex = 1 in one block and flex = 3 in the remaining block.</p>
+
+            <div class="example-container">
+                <div class="example-container-column" style="flex: 3">
+                    <span class="code-highlight">flex: 3;</span>
+                </div>
+                <div class="example-container-column" style="flex: 1">
+                    <span class="code-highlight">flex: 1;</span>
+                </div>
+            </div>
         </section>
         <section class="tutorial-content-chapter" id="contact-us">
             <h2>Contact us</h2>

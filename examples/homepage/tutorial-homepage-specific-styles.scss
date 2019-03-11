@@ -1,0 +1,16 @@
+.example-container {
+  display: flex;
+  box-sizing: border-box;
+  border: 1px solid #000;
+
+  &-column {
+    background: #eee;
+    box-sizing: border-box;
+    border: 1px solid #aaa;
+
+    & .code-highlight {
+      padding: 10px;
+      display: block;
+    }
+  }
+}

@@ -146,3 +146,18 @@ ul li {
 .toTop:hover {
   background: #fbfbfb;
 }
+
+.example-container {
+  display: flex;
+  box-sizing: border-box;
+  border: 1px solid #000;
+}
+.example-container-column {
+  background: #eee;
+  box-sizing: border-box;
+  border: 1px solid #aaa;
+}
+.example-container-column .code-highlight {
+  padding: 10px;
+  display: block;
+}
